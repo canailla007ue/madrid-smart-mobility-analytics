@@ -56,7 +56,7 @@ class AEMETClient:
             logger: Optional[logging.Logger] = None,
     ) -> None:
         # Priorizar la API key pasada por argumento, si no, buscar en entorno
-        self.api_key = api_key or os.getenv("API_KEY")
+        self.api_key = os.getenv("AEMET_API_KEY")
         self.station_id = station_id
         self.timeout = timeout
         self.logger = logger or _logger
