@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # VARIABLES DE ENTORNO (Debes crearlas en Settings > Secrets de GitHub)
-      API_KEY: ${{ secrets.API_KEY }}
+      AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
       EMT_CLIENT_ID: ${{ secrets.EMT_CLIENT_ID }}
       EMT_PASSWORD: ${{ secrets.EMT_PASSWORD }}
       RABBITMQ_USER: ${{ secrets.RABBITMQ_USER }}
