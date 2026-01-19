@@ -1,0 +1,54 @@
+name: Ingesta Datos Madrid Linea 150
+
+on:
+  schedule:
+    # --- LUNES A VIERNES (06:20 a 23:30) ---
+    # Nota: GitHub usa UTC. Madrid es UTC+1 (Invierno).
+
+    # 06:20 a 06:55 (UTC 05:20-05:55)
+    - cron: '20,25,30,35,40,45,50,55 5 * * 1-5'
+    # 07:00 a 22:55 (UTC 06:00-21:55) - Cada 5 min
+    - cron: '*/5 6-21 * * 1-5'
+    # 23:00 a 23:30 (UTC 22:00-22:30)
+    - cron: '0,5,10,15,20,25,30 22 * * 1-5'
+
+    # --- SÁBADOS Y DOMINGOS (07:15 a 23:30) ---
+
+    # 07:15 a 07:55 (UTC 06:15-06:55)
+    - cron: '15,20,25,30,35,40,45,50,55 6 * * 6,0'
+    # 08:00 a 22:55 (UTC 07:00-21:55) - Cada 5 min
+    - cron: '*/5 7-21 * * 6,0'
+    # 23:00 a 23:30 (UTC 22:00-22:30)
+    - cron: '0,5,10,15,20,25,30 22 * * 6,0'
+
+  workflow_dispatch: # Permite ejecutarlo manualmente desde la web de GitHub
+
+jobs:
+  ejecutar-main:
+    runs-on: ubuntu-latest
+    env:
+      # VARIABLES DE ENTORNO (Debes crearlas en Settings > Secrets de GitHub)
+      API_KEY: ${{ secrets.AEMET_API_KEY }}
+      EMT_CLIENT_ID: ${{ secrets.EMT_CLIENT_ID }}
+      EMT_PASSWORD: ${{ secrets.EMT_PASSWORD }}
+      RABBITMQ_USER: ${{ secrets.RABBITMQ_USER }}
+      RABBITMQ_PASS: ${{ secrets.RABBITMQ_PASS }}
+      RABBITMQ_HOST: ${{ secrets.RABBITMQ_HOST }}
+
+    steps:
+      - name: Descargar codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar librerias (requirements.txt)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar Ingestor (main.py)
+        run: python main.py
