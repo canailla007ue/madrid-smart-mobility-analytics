@@ -26,10 +26,10 @@
   <a href="https://www.youtube.com/watch?v=tgLBHhQNBlE">
     <img src="https://img.youtube.com/vi/tgLBHhQNBlE/hqdefault.jpg" alt="Video TFG" width="700">
   </a>
-*Haz clic en la imagen de arriba para ver el video explicativo de la arquitectura.*
-
 </p>
-
+<p align="center">
+*Haz clic en la imagen de arriba para ver el video explicativo de la arquitectura.*
+</p>
 ## Introducción
 
 [ Madrid Smart Mobility Analytics] este proyecto implementa una arquitectura backend asíncrona diseñada para desacoplar la ingesta de datos del procesamiento intensivo. El objetivo principal es eliminar los tiempos de espera (latencia) en las respuestas de la API y garantizar la integridad de los datos bajo alta carga.
