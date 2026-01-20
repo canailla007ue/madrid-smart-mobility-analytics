@@ -22,6 +22,9 @@
   <img src="https://img.shields.io/badge/Estado-En_Desarrollo-yellow?style=flat" alt="Estado"/>
   <img src="https://img.shields.io/github/license/canailla007ue/madrid-smart-mobility-analytics?style=flat" alt="Licencia"/>
   </p>
+  [![Ver Video Demo](https://img.youtube.com/vi/tgLBHhQNBlE/0.jpg)](https://www.youtube.com/watch?v=tgLBHhQNBlE)
+
+*Haz clic en la imagen de arriba para ver el video explicativo de la arquitectura.*
 ## Introducción
 
 [ Madrid Smart Mobility Analytics] este proyecto implementa una arquitectura backend asíncrona diseñada para desacoplar la ingesta de datos del procesamiento intensivo. El objetivo principal es eliminar los tiempos de espera (latencia) en las respuestas de la API y garantizar la integridad de los datos bajo alta carga.
