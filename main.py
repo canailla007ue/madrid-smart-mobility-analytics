@@ -140,7 +140,7 @@ def main():
     # Obtener datos y manejarlos de forma segura
     try:
 
-        paradas_objetivo = ["5907", "66", "5427","5428","65","5907","1049","2002"]
+        paradas_objetivo = ["5907", "66", "65","5407"]
         autobuses_queue = get_all_bus_data(paradas_objetivo)
         
         queue_builder = QueueBusBuilder()
