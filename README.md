@@ -22,8 +22,9 @@
   <img src="https://img.shields.io/badge/Estado-En_Desarrollo-yellow?style=flat" alt="Estado"/>
   <img src="https://img.shields.io/github/license/canailla007ue/madrid-smart-mobility-analytics?style=flat" alt="Licencia"/>
   </p>
-  [![Ver Video Demo](https://img.youtube.com/vi/tgLBHhQNBlE/0.jpg)](https://www.youtube.com/watch?v=tgLBHhQNBlE)
-
+<a href="https://www.youtube.com/watch?v=tgLBHhQNBlE">
+  <img src="https://img.youtube.com/vi/tgLBHhQNBlE/hqdefault.jpg" alt="Video TFG" width="600">
+</a>
 *Haz clic en la imagen de arriba para ver el video explicativo de la arquitectura.*
 ## Introducción
 
